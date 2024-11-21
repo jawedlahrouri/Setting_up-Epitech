@@ -12,7 +12,6 @@ NAME = libmy.a
 
 
 SRC	=	my_str_to_word_array.c \
-		setting_up.c \
 		$(pathdir)/my_compute_power_rec.c \
 		$(pathdir)/my_compute_square_root.c \
 		$(pathdir)/my_isneg.c \
@@ -42,10 +41,10 @@ LIB_OBJ =  $(LIB:.c=.o)
 $(NAME):	$(LIB_OBJ)
 		ar rcs $(NAME) $(LIB_OBJ)
 		$(MAKE) clean
-		gcc -g $(SRC) -Iinclude -L. -libmy
+		gcc -g $(SRC) -Iinclude -L. -lmy
 
 
-all: 	$(NAME) $(EXEC)
+all: 	$(NAME)
 
 
 
@@ -54,11 +53,11 @@ clean:
 
 
 fclean: clean
-		rm -f $(NAME) $(TEST) $(OBJ)ç
+		rm -f $(NAME) $(TEST) $(OBJ)
 
 re:
 		$(MAKE) fclean
 		$(MAKE) all
 debug:
 		$(MAKE) clean
-		gcc -g $(SRC) -Iinclude -L. -libmy
+		gcc -g $(SRC) -Iinclude -L. -lmy
