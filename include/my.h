@@ -24,16 +24,15 @@ char *my_strcat(char *dest, char const *src);
 char *my_strncat(char *dest, char const *src, int nb);
 void my_putchar(char c);
 int my_printf(const char *format, ...);
-int flag_d(va_list list);
-int flag_o(va_list list);
-int flag_s(va_list list);
-int flag_i(va_list list);
-int flag_c(va_list list);
-int flag_percent(va_list list);
-int flag_x2(va_list list);
-int flag_x(va_list list);
+void flag_d(va_list list);
+void flag_o(va_list list);
+void flag_s(va_list list);
+void flag_i(va_list list);
+void flag_c(va_list list);
+void flag_percent(va_list list);
+void flag_x2(va_list list);
+void flag_x(va_list list);
 void blank(char *blank);
-int flag_detector(const char *format, int i, va_list list);
-int my_ls(int argc, char **argv);
+void flag_detector(const char *format, int i, va_list list);
 
 #endif /*my.h*/
