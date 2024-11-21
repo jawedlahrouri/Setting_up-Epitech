@@ -8,7 +8,7 @@
 #include <stdarg.h>
 #include "../include/my.h"
 
-int flag_o(va_list list)
+void flag_o(va_list list)
 {
     int i = va_arg(list, int);
     int result = 0;
@@ -20,5 +20,4 @@ int flag_o(va_list list)
         power *= 10;
     }
     my_put_nbr(result);
-    return 0;
 }

@@ -9,7 +9,7 @@
 #include <stdarg.h>
 #include "../include/my.h"
 
-int flag_i(va_list list)
+void flag_i(va_list list)
 {
     my_put_nbr(va_arg(list, int));
 }

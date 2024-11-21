@@ -8,8 +8,7 @@
 #include <stdarg.h>
 #include "../include/my.h"
 
-int flag_c(va_list list)
+void flag_c(va_list list)
 {
     my_putchar(va_arg(list, int));
-    return 0;
 }

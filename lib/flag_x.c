@@ -8,7 +8,7 @@
 #include <stdarg.h>
 #include "../include/my.h"
 
-int flag_x(va_list list)
+void flag_x(va_list list)
 {
     char *base = "0123456789abcdef";
     int i = (va_arg(list, int));
@@ -24,5 +24,4 @@ int flag_x(va_list list)
     str[p] = '\0';
     my_revstr(str);
     my_putstr(str);
-    return 0;
 }

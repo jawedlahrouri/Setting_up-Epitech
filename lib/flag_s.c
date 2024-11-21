@@ -9,10 +9,9 @@
 #include <stdarg.h>
 #include "../include/my.h"
 
-int flag_s(va_list list)
+void flag_s(va_list list)
 {
     char *str = va_arg(list, char *);
 
     my_putstr(str);
-    return 0;
 }
