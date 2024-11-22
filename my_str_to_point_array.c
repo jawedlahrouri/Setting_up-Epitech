@@ -8,38 +8,36 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-static int skip_invalid(const char *str, int i)
-{
-    while (str[i] != '.' && str[i] != '0')
-        i++;
-    return i;
-}
-
 int count_line(const char *str)
 {
     int line = 0;
 
     for (int i = 0; str[i] != '\0'; i++) {
-        if ((str[i] == '.' || str[i] == '0') && str[i + 1] == '\n') {
+        if ((str[i] == '.' || str[i] == 'o') && str[i + 1] == '\n') {
             line++;
-            i++;
         }
     }
     return line;
 }
 
-int line_size(const char *str, int act_pos)
+int line_size(const char *str, int start_line)
 {
     int line_size = 0;
 
-    act_pos = skip_invalid(str, act_pos);
-    while (str[act_pos] == '.' || str[act_pos] == '0') {
-        line_size++;
-        act_pos++;
-    }
-    if (str[act_pos] == '\n')
+    for (int i = 0; str[i] != '\n' && str[i] != '\0'; i++)
         line_size++;
     return line_size;
+}
+
+void write_line(char *line, const char *str, int start, int size)
+{
+    int i = 0;
+
+    while (i < size) {
+        line[i] = str[start + i];
+        i++;
+    }
+    line[size] = '\0';
 }
 
 char **my_str_to_point_array(const char *str)
@@ -50,15 +48,11 @@ char **my_str_to_point_array(const char *str)
     int size = 0;
 
     for (int l = 0; l < line; l++) {
-        act_pos = skip_invalid(str, act_pos);
         size = line_size(str, act_pos);
         tab[l] = malloc((size + 1) * sizeof(char));
-        for (int c = 0; c < size; c++) {
-            act_pos++;
-            tab[l][c] = str[act_pos];
-        }
-        tab[l][size] = '\0';
-        act_pos++;
+        write_line(tab[l], str, act_pos, size);
+        act_pos += size + 1;
+        l++;
     }
     tab[line] = NULL;
     return tab;
