@@ -11,10 +11,8 @@
 char **place_square(char **tab, int max_x, int max_y, int size)
 {
     int size_x = size;
-    int size_y = size;
 
     for (int i = max_x; size_x != 0; i--) {
-        size_y = size;
         for (int j = max_y; j > max_y - size; j--)
             tab[i][j] = 'x';
         size_x--;
