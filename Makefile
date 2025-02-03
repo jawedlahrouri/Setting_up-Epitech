@@ -5,13 +5,14 @@
 ## makefile
 ##
 
-pathdir = lib
+pathdir = src/lib
 
-NAME = libmy.a
+NAME = setting_up
 
-
-
-SRC	=	my_str_to_word_array.c \
+SRC	=	./src/my_str_to_point_array.c \
+		./src/setting_up.c \
+		./src/parse_matrice.c \
+		./src/handle_memory.c \
 		$(pathdir)/my_compute_power_rec.c \
 		$(pathdir)/my_compute_square_root.c \
 		$(pathdir)/my_isneg.c \
@@ -38,26 +39,23 @@ OBJ  	=	 $(SRC:.c=.o)
 
 LIB_OBJ =  $(LIB:.c=.o)
 
-$(NAME):	$(LIB_OBJ)
-		ar rcs $(NAME) $(LIB_OBJ)
-		$(MAKE) clean
-		gcc -g $(SRC) -Iinclude -L. -lmy
-
-
+CFLAGS = -g -W -Wall -Wextra -Iinclude -Ilib/include
 all: 	$(NAME)
+		$(MAKE) clean
 
-
+$(NAME):	$(OBJ)
+		$(MAKE) -C src/lib all
+		gcc $(CFLAGS) -o $(NAME) $(OBJ) libmy.a
+		rm libmy.a
 
 clean:
-		rm -f $(OBJ) $(LIB_OBJ)
+		$(MAKE) -C src/lib clean
+		rm -f $(OBJ)
 
-
-fclean: clean
-		rm -f $(NAME) $(TEST) $(OBJ)
+fclean:
+		rm -f $(NAME) debug $(OBJ) libmy.a
 
 re:
 		$(MAKE) fclean
 		$(MAKE) all
-debug:
 		$(MAKE) clean
-		gcc -g $(SRC) -Iinclude -L. -lmy
