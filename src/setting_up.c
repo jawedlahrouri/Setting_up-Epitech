@@ -51,9 +51,12 @@ int main(int argc, char **argv)
     int **mat;
     int *max = malloc(sizeof(int) * 4);
 
-    if (argc != 2)
+    if (argc > 3)
         return 84;
-    str = read_file(argv[1]);
+    if (argc == 3)
+        str = generate_map(my_getnbr(argv[1]), argv[2]);
+    else
+        str = read_file(argv[1]);
     if (str == NULL)
         return 84;
     tab = my_str_to_point_array(str);

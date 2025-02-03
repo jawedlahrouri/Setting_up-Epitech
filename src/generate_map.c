@@ -8,20 +8,28 @@
 #include "my.h"
 #include "tab.h"
 
+char *fill_map(char *str, int size, char *pattern)
+{
+    int k = 0;
+    int width = size + 1;
+
+    for (int i = 0; i != (width * size); i++) {
+        if (i % width == size)
+            str[i] = '\n';
+        else {
+            str[i] = pattern[k];
+            k = (pattern[k + 1] == '\0') ? 0 : k + 1;
+        }
+    }
+    str[width * size] = '\0';
+    return str;
+}
+
 char *generate_map(int size, char *pattern)
 {
-    char *str = malloc(sizeof(char *) * (size * (size + 1)) + 1);
-    int k = 0;
-    int i = 0;
+    char *str = malloc(sizeof(char) * (size * (size + 1)) + 1);
 
-    for (; i != (size * (size + 1)); i++) {
-        if (i % size == 0) {
-            str[i] = '\n';
-            i++;
-        }
-        if (pattern[k] == '\0')
-            k = 0;
-        str[i] = pattern[k];
-    }
-    str[i + 1] = '\0';
+    if (!str)
+        return NULL;
+    return fill_map(str, size, pattern);
 }
