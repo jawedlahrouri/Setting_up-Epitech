@@ -63,5 +63,4 @@ int main(int argc, char **argv)
     tab = place_square(tab, max[1], max[2], max[0]);
     for (int i = 0; tab[i] != NULL; i++)
         my_printf("%s\n", tab[i]);
-    my_printf("taille: %d\n", max[0]);
 }
