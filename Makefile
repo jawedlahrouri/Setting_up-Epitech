@@ -13,6 +13,7 @@ SRC	=	./src/my_str_to_point_array.c \
 		./src/setting_up.c \
 		./src/parse_matrice.c \
 		./src/handle_memory.c \
+		./src/generate_map.c \
 		$(pathdir)/my_compute_power_rec.c \
 		$(pathdir)/my_compute_square_root.c \
 		$(pathdir)/my_isneg.c \
