@@ -51,6 +51,7 @@ int main(int argc, char **argv)
     char **tab;
     int **mat;
     int *max = malloc(sizeof(int) * 4);
+    char *buffer = NULL;
 
     if (argc > 3)
         return 84;
@@ -60,11 +61,13 @@ int main(int argc, char **argv)
         str = read_file(argv[1]);
     if (str == NULL)
         return 84;
+    buffer = malloc(sizeof(char) * (my_strlen(str) + 1));
     tab = my_str_to_point_array(str);
     mat = alloc_mat(tab);
     mat = make_zerorone(tab, mat);
     make_othersq(tab, mat, max);
     tab = place_square(tab, max[1], max[2], max[0]);
     for (int i = 0; tab[i] != NULL; i++)
-        my_printf("%s\n", tab[i]);
+        my_strcat(buffer, tab[i]);
+    my_putstr(buffer);
 }

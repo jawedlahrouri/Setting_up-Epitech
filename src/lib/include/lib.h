@@ -13,7 +13,7 @@
 int my_isneg(int nb);
 int my_put_nbr(int nb);
 void my_swap(int *a, int *b);
-int my_putstr(char const *str);
+void my_putstr(char const *str);
 int my_strlen(char const *str);
 int my_compute_power_rec(int nb, int power);
 int my_compute_square_root(int nb);
