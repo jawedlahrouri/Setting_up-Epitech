@@ -1,19 +1,20 @@
 /*
 ** EPITECH PROJECT, 2024
-** Raciné carré
+** sqr root
 ** File description:
-** carré comme le projet
+** adfgt
 */
+
+#include "include/lib.h"
 
 int my_compute_square_root(int nb)
 {
     int i = 0;
 
-    if (nb <= 0)
-        return (0);
-    for (; i * i != nb; i++) {
-        if (i > nb)
-            return (0);
+    while (nb >= i * i) {
+        if (nb == i * i)
+            return i;
+        i = i + 1;
     }
-    return (i);
+    return 0;
 }

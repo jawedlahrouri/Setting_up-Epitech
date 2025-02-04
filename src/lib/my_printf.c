@@ -7,8 +7,8 @@
 
 #include <stdio.h>
 #include <stdarg.h>
-#include "include/lib.h"
-#include "include/flags.h"
+#include "./include/lib.h"
+#include "./include/flags.h"
 #include <unistd.h>
 
 const flag_t flags[] = {
@@ -34,7 +34,7 @@ int my_printf(const char *format, ...)
             i++;
             flag_detector(format, i, list);
         } else
-            my_putchar(format[i]);
+            write(1, &format[i], 1);
     }
     va_end(list);
     return 0;

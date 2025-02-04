@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2024
-** putstr
+** my_putstr.c
 ** File description:
-** putstr
+** putchar a string of char
 */
 
 #include "include/lib.h"
@@ -11,9 +11,9 @@ int my_putstr(char const *str)
 {
     int i = 0;
 
-    while (str[i] != '\0') {
+    while (str[i] != '\0'){
         my_putchar(str[i]);
-        i++;
+        i = i + 1;
     }
     return 0;
 }

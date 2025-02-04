@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** my_putchar
 ** File description:
-** affiche le texte
+** put a char
 */
 
 #include <unistd.h>

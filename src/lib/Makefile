@@ -7,33 +7,20 @@
 
 NAME = libmy.a
 
-CFLAGS += -Wall -Werror -Wextra -W -Iinclude -Ilib
+CFLAGS += -Wall -Werror -Wextra -W -Iinclude
 
-
-LIB =	./check_strisnum.c\
-	./my_compute_power_rec.c\
+LIB =	./my_compute_power_rec.c\
 	./my_getnbr.c\
-	./my_is_prime.c\
 	./my_isneg.c\
 	./my_put_nbr.c\
 	./my_putchar.c\
 	./my_putstr.c\
 	./my_revstr.c\
-	./my_strdup.c\
-	./my_strncmp.c\
 	./my_strcpy.c\
 	./my_strlen.c\
 	./my_strncpy.c\
 	./my_swap.c\
-	./my_print_comb2.c\
-	./my_print_com.c\
-	./my_strndup.c\
-	./my_sort_params.c\
-	./my_evil_str.c\
 	./my_revstr.c\
-	./my_str_str.c\
-	./my_str_to_word_array.c\
-	./blanck.c\
 	./flag_c.c\
 	./flag_d.c\
 	./flag_i.c\
@@ -42,11 +29,10 @@ LIB =	./check_strisnum.c\
 	./flag_s.c\
 	./flag_x.c\
 	./flag_x2.c\
-	./my_printf.c
-
+	./my_printf.c\
+	./my_str_isnum.c
 
 OBJ_LIB  	=	 $(LIB:.c=.o)
-
 
 all: 	$(NAME)
 

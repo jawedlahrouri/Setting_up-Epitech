@@ -1,28 +1,21 @@
 /*
 ** EPITECH PROJECT, 2024
-** get nbr
+** my_strdup
 ** File description:
-** nbr
+** write string
 */
 
 #include "include/lib.h"
-
-int my_getnbr(char const *str)
+int my_getnbr(const char *str)
 {
-    int i = 0;
-    int result = 0;
-    int neg = 1;
+    int nbr = 0;
+    int ascii = 0;
 
-    while (str[i] == '\0' || str[i] == '\n') {
-        i++;
+    if (my_str_isnum(str) == 0)
+        return 84;
+    for (int i = 0; str[i] != '\0'; i++) {
+        ascii = str[i] - 48;
+        nbr = nbr * 10 + ascii;
     }
-    if (str[i] == '-') {
-        neg = -1;
-        i++;
-    }
-    while (str[i] >= '0' && str[i] <= '9') {
-        result = result * 10 + (str[i] - '0');
-        i++;
-    }
-    return result * neg;
+    return nbr;
 }

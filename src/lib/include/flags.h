@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2024
 ** .h
 ** File description:
-** struct
+** stuct
 */
 
-#include <stdlib.h>
+#include "lib.h"
 #include <stdarg.h>
 
 #ifndef STRUCT_H_

@@ -1,16 +1,20 @@
 /*
 ** EPITECH PROJECT, 2024
-** Isneg
+** my_isneg.c
 ** File description:
-** positif or not
+** Write a function that displays either N if the
+** integer passed as parameter is negative or P, if
+** positive or null
 */
+
 #include "include/lib.h"
 
-int my_isneg(int i)
+int my_isneg(int nb)
 {
-    if (i < 0)
+    if (nb < 0) {
         my_putchar('N');
-    else
+    } else {
         my_putchar('P');
+    }
     return 0;
 }

@@ -1,30 +1,21 @@
 /*
 ** EPITECH PROJECT, 2024
-** my put nbr
+** my_put_nbr.c
 ** File description:
-** affiche un chiffre
+** task07: my_put_nbr
 */
 
 #include "include/lib.h"
 
 int my_put_nbr(int nb)
 {
-    int beginning = nb / 10;
-    int end = nb % 10;
-
     if (nb < 0) {
         my_putchar('-');
-        if (nb < - 2147483647 + 1) {
-            my_put_nbr(- beginning);
-            return my_put_nbr(- end);
-        }
-        return my_put_nbr(- nb);
+        nb = - nb;
     }
-    if (beginning != 0) {
-        my_put_nbr(beginning);
-        my_putchar(end + '0');
-    } else {
-        my_putchar(end + '0');
+    if (nb >= 10) {
+        my_put_nbr(nb / 10);
     }
+    my_putchar('0' + (nb % 10));
     return 0;
 }

@@ -1,15 +1,28 @@
 /*
 ** EPITECH PROJECT, 2024
-** strncpy
+** my_strncpy
 ** File description:
-** je sais pas quoi mettre
+** same as cpy but for only n char
 */
 
-#include <stdio.h>
-
+#include "include/lib.h"
 char *my_strncpy(char *dest, char const *src, int n)
 {
-    for (int i = 0; i < n; i++)
+    int i = 0;
+
+    if (n >= my_strlen(src)) {
+        while (src[i] != '\0') {
+            dest[i] = src[i];
+            i++;
+        }
+        i = 0;
+        dest[i] = '\0';
+        return dest;
+    }
+    while (i != n) {
         dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
     return dest;
 }
