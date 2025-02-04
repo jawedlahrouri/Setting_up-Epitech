@@ -31,11 +31,10 @@ void make_square(char **tab, int **mat, int *max, tab_t *position)
 {
     int min_val = 0;
 
-
     if (tab[position->rows][position->cols] == '.') {
         if (position->rows == 0 || position->cols == 0)
             mat[position->rows][position->cols] = 1;
-        else { 
+        else {
             min_val = min_value(mat[position->rows - 1][position->cols],
             mat[position->rows][position->cols - 1],
             mat[position->rows - 1][position->cols - 1]);
