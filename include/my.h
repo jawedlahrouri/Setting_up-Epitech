@@ -25,4 +25,5 @@ int min_value(int a, int b, int c);
 int **make_zerorone(char **tab, int **mat);
 void make_square(char **tab, int **mat, int *max, tab_t *position);
 void make_othersq(char **tab, int **mat, int *max);
+char *generate_map(int size, char *pattern);
 #endif /* !MY_H_ */
