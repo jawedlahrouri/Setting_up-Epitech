@@ -67,7 +67,9 @@ int main(int argc, char **argv)
     mat = make_zerorone(tab, mat);
     make_othersq(tab, mat, max);
     tab = place_square(tab, max[1], max[2], max[0]);
-    for (int i = 0; tab[i] != NULL; i++)
+    for (int i = 0; tab[i] != NULL; i++){
         my_strcat(buffer, tab[i]);
+        my_strcat(buffer, "\n");
+    }
     my_putstr(buffer);
 }
