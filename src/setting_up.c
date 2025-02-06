@@ -45,12 +45,24 @@ char *read_file(const char *filename)
     return buffer;
 }
 
+char **setting_up(char *str)
+{
+    char **tab;
+    int **mat;
+    int *max = malloc(sizeof(int) * 4);
+
+    tab = my_str_to_point_array(str);
+    mat = alloc_mat(tab);
+    mat = make_zerorone(tab, mat);
+    make_othersq(tab, mat, max);
+    tab = place_square(tab, max[1], max[2], max[0]);
+    return tab;
+}
+
 int main(int argc, char **argv)
 {
     char *str;
     char **tab;
-    int **mat;
-    int *max = malloc(sizeof(int) * 4);
     char *buffer = NULL;
 
     if (argc > 3)
@@ -62,12 +74,8 @@ int main(int argc, char **argv)
     if (str == NULL)
         return 84;
     buffer = malloc(sizeof(char) * (my_strlen(str) + 1));
-    tab = my_str_to_point_array(str);
-    mat = alloc_mat(tab);
-    mat = make_zerorone(tab, mat);
-    make_othersq(tab, mat, max);
-    tab = place_square(tab, max[1], max[2], max[0]);
-    for (int i = 0; tab[i] != NULL; i++){
+    tab = setting_up(str);
+    for (int i = 0; tab[i] != NULL; i++) {
         my_strcat(buffer, tab[i]);
         my_strcat(buffer, "\n");
     }
