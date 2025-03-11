@@ -33,7 +33,7 @@ README.md               # This file
 ### Compilation
 Clone the repository:
 ```sh
-git clone https://github.com/jawedlahrouri/setting_up-epitech.git
+git clone https://github.com/jawedlahrouri/Setting_up-Epitech.git
 cd setting_up
 ```
 Compile the project:
