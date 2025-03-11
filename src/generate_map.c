@@ -6,7 +6,6 @@
 */
 
 #include "my.h"
-#include "tab.h"
 
 char *fill_map(char *str, int size, char *pattern)
 {

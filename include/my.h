@@ -7,6 +7,12 @@
 
 #ifndef MY_H_
     #define MY_H_
+
+    typedef struct tab_s {
+        int cols;
+        int rows;
+    } tab_t;
+
     #include <crypt.h>
     #include <stdio.h>
     #include <stdlib.h>
@@ -15,7 +21,6 @@
     #include <unistd.h>
     #include <fcntl.h>
     #include <sys/stat.h>
-    #include "tab.h"
 int main(int argc, char **argv);
 char **my_str_to_point_array(const char *str);
 int **alloc_mat(char **tab);

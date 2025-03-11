@@ -7,7 +7,6 @@
 
 #include "my.h"
 #include "./lib/include/lib.h"
-#include "tab.h"
 
 char **place_square(char **tab, int max_x, int max_y, int size)
 {

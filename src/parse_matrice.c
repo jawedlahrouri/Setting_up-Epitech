@@ -6,7 +6,6 @@
 */
 
 #include "my.h"
-#include "tab.h"
 
 int min_value(int a, int b, int c)
 {
